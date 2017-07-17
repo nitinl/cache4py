@@ -8,12 +8,13 @@ Install using pip: `$ pip install cache4py`
 
 ### Usage
 ```python
-from cache4py import cache, LRU, Backend
+from cache4py.decorators import cache
+from cache4py.backends import RedisBackend
 
 # You can choose memcached, redis or default (python's dict) as a backend.
-redis_backend = Backend(variant=Backend.REDIS, url='', port='')
+redis_backend = RedisBackend(url='', port='')
 
-@cache(eviction_policy=LRU, backend=redis_backend)
+@cache(backend=redis_backend)
 def my_function_one(*args, **kwargs):
     # do something awesome
     return
