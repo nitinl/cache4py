@@ -15,3 +15,7 @@ class BackendException(Cache4PyException):
 
 class RedisBackendException(BackendException):
     pass
+
+
+class MemcachedBackendException(BackendException):
+    pass
