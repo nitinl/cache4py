@@ -8,8 +8,8 @@ import warnings
 
 from pymemcache.client import Client
 
-from exceptions import MemcachedBackendException
-from storage.base import BaseBackend
+from cache4py.exceptions import MemcachedBackendException
+from cache4py.storage.base import BaseBackend
 
 
 class MemcachedBackend(BaseBackend):
@@ -27,7 +27,7 @@ class MemcachedBackend(BaseBackend):
         """
         if type(value) == str:
             return value, 1
-        return pickle.dumps(value), 2
+        return pickle.dumps(value, protocol=pickle.HIGHEST_PROTOCOL), 2
 
     @staticmethod
     def memcached_deserializer(key, value, flags):

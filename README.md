@@ -9,10 +9,10 @@ Install using pip: `$ pip install cache4py`
 ### Usage
 ```python
 from cache4py.decorators import cache
-from cache4py.backends import RedisBackend
+from cache4py.storage.backends import RedisBackend
 
 # You can choose memcached, redis or default (python's dict) as a backend.
-redis_backend = RedisBackend(url='', port='')
+redis_backend = RedisBackend(url='localhost', port='6379')
 
 @cache(backend=redis_backend)
 def my_function_one(*args, **kwargs):
@@ -43,7 +43,11 @@ pip install -r requirements.txt
 ```
 ### Running the tests
 
-Run unit tests using the command: `TODO`
+Run unit tests using the command: 
+
+```
+pytest --cov=cache4py --cov-report html tests/
+```
 
 ## Issue tracking
 
