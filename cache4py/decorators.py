@@ -4,9 +4,10 @@ Date: 18/7/17
 Description: 
 """
 from functools import wraps
-from exceptions import BackendException
-from utils import args_to_key, hash_key
-from backends import RedisBackend
+
+from cache4py.exceptions import BackendException
+from cache4py.utils import args_to_key, hash_key
+from cache4py.storage.redis import RedisBackend
 
 
 def cache(backend=RedisBackend, keys=args_to_key):

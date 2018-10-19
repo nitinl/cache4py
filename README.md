@@ -47,7 +47,7 @@ Run unit tests using the command: `TODO`
 
 ## Issue tracking
 
-Create issues at [cache4pd/issues](https://github.com/nitinl/cache4py/issues).
+Create issues at [cache4py/issues](https://github.com/nitinl/cache4py/issues).
 
 ## Authors
 
