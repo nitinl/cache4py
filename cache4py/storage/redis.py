@@ -17,19 +17,19 @@ class RedisBackend(BaseBackend):
     Wrapper over redis client object provided by python redis library. Supports storing objects in redis.
     """
 
-    def __init__(self, server, port=6379):
+    def __init__(self, url, port=6379):
         """
         Initialize redis client as a cache backend.
-        :param server: URL of redis service.
+        :param url: URL of redis service.
         :param port: Port number at which redis service is exposed. If not specified, uses port 6379 by default.
         """
-        self.__server = server
+        self.__server = url
         self.__port = port
-        self.__client = redis.StrictRedis(host=server, port=port)
+        self.__client = redis.StrictRedis(host=url, port=port)
         try:
             self.__client.ping()
         except redis.ConnectionError as connection_error:
-            warnings.warn('Failed to connect to redis server: {0} at port: {1}'.format(server, port))
+            warnings.warn('Failed to connect to redis server: {0} at port: {1}'.format(url, port))
             raise RedisBackendException(connection_error)
 
     def is_client_valid(self):

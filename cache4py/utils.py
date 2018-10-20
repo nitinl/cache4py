@@ -29,6 +29,6 @@ def hash_key(python_object):
     :param python_object: A python object.
     :return: Consistent sha224 hash for the key_object.
     """
-    serialized_key = pickle.dumps(python_object)
+    serialized_key = pickle.dumps(python_object, protocol=pickle.HIGHEST_PROTOCOL)
     hashed_key = sha224(serialized_key).hexdigest()
     return hashed_key
