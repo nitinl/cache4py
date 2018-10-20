@@ -1,5 +1,9 @@
 # cache4py: Caching simplified.
 
+[![PyPI version shields.io](https://img.shields.io/pypi/v/cache4py.svg)](https://pypi.python.org/pypi/cache4py/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/cache4py.svg)](https://pypi.python.org/pypi/cache4py/)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
 ## Getting started
 
 ### Installation
