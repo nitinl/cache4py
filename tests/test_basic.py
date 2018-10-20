@@ -37,7 +37,7 @@ def test_redis():
 
     start_time = time.time()
     for i in range(5):
-      _ = redis_target_function(75000)
+        _ = redis_target_function(75000)
     cached_time = time.time() - start_time
 
     print("Time difference: before: {0}, after: {1}".format(uncached_time, cached_time))

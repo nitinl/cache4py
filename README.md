@@ -1,5 +1,4 @@
-# cache4py
-Caching simplified.
+# cache4py: Caching simplified.
 
 ## Getting started
 
@@ -9,7 +8,7 @@ Install using pip: `$ pip install cache4py`
 ### Usage
 ```python
 from cache4py.decorators import cache
-from cache4py.storage.backends import RedisBackend
+from cache4py.storage.redis import RedisBackend
 
 # You can choose memcached, redis or default (python's dict) as a backend.
 redis_backend = RedisBackend(url='localhost', port='6379')
@@ -22,32 +21,16 @@ def my_function_one(*args, **kwargs):
 
 ### Options
 1. Keys
-2. Eviction policies
+2. Eviction policies (coming soon)
 3. Backend
-4. Max memory limit
-5. Key expiry time
+4. Max memory limit (coming soon)
+5. Key expiry time (coming soon)
 
 
 
 ## Contributing to cache4py
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing.
- TODO
-
-### Prerequisites
-
-Install the python package requirements using the following command:
-
-```
-pip install -r requirements.txt
-```
-### Running the tests
-
-Run unit tests using the command: 
-
-```
-pytest --cov=cache4py --cov-report html tests/
-```
+Refer CONTRIBUTING.md
 
 ## Issue tracking
 
